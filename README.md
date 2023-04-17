@@ -1,70 +1,82 @@
-# Getting Started with Create React App
+## 서비스 개발 단계
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+### 기획
 
-## Available Scripts
+- react native, recoil, axios, styled components, open API를 더 능숙하게 익히하기 위해 기능을 구현
+    - recoil 로 상태 관리
+    - open API 활용
+    - 서버 통신: axios 활용
+    - 로그인 기능
+    
+- **홈** (메인) / **커뮤니티(글쓰기)** / **마이페이지**
+    - 홈
+        - 소환사 명 검색
+        - 내 소환사 등록하기
+        - 소환사 즐겨찾기 하기
+        - 소환사 정보 Detail 페이지
+    - **커뮤니티(글쓰기)**: 글쓰기
+        - 수정 및 삭제 기능
+        - 글쓰기 페이지
+    - **마이페이지**:
+        - 로그인
+        - 테마 설정: 라이트 모드, 다크 모드
+        - 버전 명시
 
-In the project directory, you can run:
+**기술스택**
 
-### `npm start`
+- 프래임워크: react native
+- 상태관리: recoil
+- 코드 형상관리: git
+- 패키지: styled components
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### 설계
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- 데이터 설계
+    - 소환사 정보: open API 활용
+        - Recoil 상태 관리 라이브러리를 통해 관리
+- 인터페이스 설계
+    - 바텀 탭 3개
+        - 홈: 소환사명 검색 / 내 소환사 등록 / 소환사 즐겨찾기
+            - open API 활용
+        - 마이 페이지에서는 여러 기능 구현 (로그인, 개인 정보 수정, 테마 설정)
 
-### `npm test`
+- UI 설계 (컴포넌트 설계)
+    - 소환사 등록 버튼, 검색 TextInput 컴포넌트, 상세 버튼 등
+- 인터렉션 설계 (로직 설계)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+3. 구현 및 개발 -> 4월 17일 시작
 
-### `npm run build`
+4. 테스트 (고객의 입장에서)
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### 목업 디자인
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/b2031859-4bb0-4922-830c-c0d2ee0e996a/Untitled.png)
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## 진행 사항
 
-### `npm run eject`
+- 바텀 탭 3가지:  홈 / 커뮤니티 / 마이페이지
+- 실질적 추가 페이지로는 소환사 정보 Detail 페이지 / 글 작성 페이지
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+### 홈
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- 소환사 검색창
+- ad 배너
+- 내 소환사 등록
+- 즐겨찾는 소환사 등록 (내 소환사와는 정보 상이)
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+### 커뮤니티
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+- 글쓰기
+- 수정 및 삭제
 
-## Learn More
+### 마이페이지
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+- 개인 정보 기입 및 수정 (구현 예정)
+- 테마 설정
+- 버전 명시
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## 특이사항
 
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- 작업시 github 업로드
+- 데이터는 Roit API를 활용
+- 상태 관리 Recoil
