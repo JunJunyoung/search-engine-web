@@ -30,7 +30,12 @@ const SearchBox = () => {
             uri: "https://webstockreview.net/images/search-icon-png-4.png",
           }}
         />
-        <TextField id="outlined-basic" label="Outlined" variant="outlined" />
+        <TextField
+          id="outlined-basic"
+          label="Outlined"
+          variant="outlined"
+          ref={searchRef}
+        />
         <input
           ref={searchRef}
           placeholder="       검색어를 입력해 주세요"
@@ -60,13 +65,13 @@ const SearchBox = () => {
   );
 };
 
-const SearchBarWrap = styled.View`
+const SearchBarWrap = styled.div`
   position: relative;
   flex-direction: row;
   width: 100%;
 `;
 
-const SearchIcon = styled.Image`
+const SearchIcon = styled.img`
   position: absolute;
   left: 19px;
   top: 22px;
