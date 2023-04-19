@@ -21,7 +21,7 @@ function Main() {
 const MainContainer = styled.div`
   height: 100vh;
   width: 100vw;
-  background-color: rgb(4 0 0);
+  background-color: white;
   display: flex;
   flex-direction: column;
   align-items: center;

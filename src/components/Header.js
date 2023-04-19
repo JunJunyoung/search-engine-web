@@ -1,21 +1,34 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import styled from "styled-components";
 
-const Headers = () => {
+const Header = () => {
   return (
-    <div className="header1">
-      <div className="l-menu1">
-        <ul className="menu1">
-          <li className="menu__item1">
-            <Link to="/">Home</Link>
-          </li>
-          <li className="menu__item1">
-            <Link to="/community">커뮤니티</Link>
-          </li>
-        </ul>
-      </div>
-    </div>
+    <Container>
+      <CommunityButton to="/community">커뮤니티</CommunityButton>
+    </Container>
   );
 };
 
-export default Headers;
+const Container = styled.div`
+  display: flex;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  color: #000000;
+  font-weight: bold;
+  text-decoration: none;
+  font-size: 18px;
+  border-bottom: 1px solid gray;
+  margin-top: 0.5rem;
+  margin-bottom: 2rem;
+  padding-bottom: 1rem;
+`;
+
+const CommunityButton = styled(Link)`
+  text-decoration: none;
+  color: black;
+`;
+
+export default Header;
