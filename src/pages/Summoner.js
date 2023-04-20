@@ -6,9 +6,19 @@ import SummonerIngame from "../components/SummonerIngame";
 import SummonerBot from "../components/SummonerBot";
 import axios from "axios";
 import { useRecoilValue, useRecoilState } from "recoil";
-import { summonerState, infoState, userDataState } from "../atoms/summoner";
+import { summonerState, infoState, userDataState } from "../atoms/SummonerAtom";
 
-const API_KEY = "RGAPI-ba21bf6b-050e-4358-b172-299328b1b9aa";
+function getPlayerGames(evnet) {
+  axios
+    .get("http://localhost:4000/past5Games")
+    .then(function (response) {
+      setGameList(response.data);
+    })
+    .catch(function (error) {
+      console.log(error);
+    });
+}
+console.log(getPlayerGames);
 
 const Summoner = () => {
   const summonerName = useRecoilValue(summonerState);

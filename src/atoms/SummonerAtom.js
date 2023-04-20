@@ -1,12 +1,8 @@
 import { atom } from "recoil";
 
-export interface SUMMONER {
-  summoner: string;
-}
-
-export const summonerState = atom<SUMMONER>({
+export const summonerState = atom({
   key: "summonerState",
-  default: { summoner: "" },
+  default: {},
 });
 
 export const infoState = atom({
@@ -15,11 +11,11 @@ export const infoState = atom({
 });
 
 export const userDataState = atom({
-  key: "InfoState",
+  key: "userDataState",
   default: {},
 });
 
 export const rankDataState = atom({
-  key: "InfoState",
+  key: "rankDataState",
   default: [],
 });

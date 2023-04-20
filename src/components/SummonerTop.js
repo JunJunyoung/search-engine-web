@@ -2,13 +2,13 @@ import React, { useEffect } from "react";
 import { useRecoilState } from "recoil";
 import styled from "styled-components";
 import axios from "axios";
-import { rankDataState, infoState } from "../atoms/summoner";
+import { rankDataState, infoState } from "../atoms/SummonerAtom";
 
 const SummonerTop = ({ data, key }) => {
   const [rankData, setRankData] = useRecoilState(rankDataState);
   const getRankData = async () => {
     const response = await axios(
-      `https://kr.api.riotgames.com/lol/league/v4/entries/by-summoner/${data.id}?api_key=${key}`
+      `https://kr.api.riotgames.com/lol/league/v4/entries/by-summoner/${data.accountId}?api_key=${key}`
     );
     console.log("response>>>", response);
     setRankData(response);

@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import { useRecoilState } from "recoil";
-import { summonerState } from "../atoms/summoner";
+import { summonerState } from "../atoms/SummonerAtom";
 import TextField from "@mui/material/TextField";
 import { useNavigate } from "react-router-dom";
 
@@ -12,9 +12,11 @@ const SearchBox = () => {
     if (e.key === "Enter") {
       if (e.target.value === "") return false;
       navigate("/Summoner");
-      // onSearch(summonerName, "recent");
     }
   };
+
+  console.log("summonerState>>>", summonerState);
+  console.log("summonerName>>>", summonerName);
 
   return (
     <div className="Container">
